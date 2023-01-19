@@ -23,6 +23,8 @@
 		78691A6C29798AD7006B3F8A /* DynamicCoinSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6B29798AD7006B3F8A /* DynamicCoinSceneRouter.swift */; };
 		78691A6E29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6D29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift */; };
 		78691A702979AD62006B3F8A /* DynamicCoinSceneFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6F2979AD62006B3F8A /* DynamicCoinSceneFlow.swift */; };
+		78691A742979DA2D006B3F8A /* TabBarFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A732979DA2D006B3F8A /* TabBarFlow.swift */; };
+		78691A772979E6D1006B3F8A /* SwiftyBeaver in Frameworks */ = {isa = PBXBuildFile; productRef = 78691A762979E6D1006B3F8A /* SwiftyBeaver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,7 @@
 		78691A6B29798AD7006B3F8A /* DynamicCoinSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneRouter.swift; sourceTree = "<group>"; };
 		78691A6D29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneInteractor.swift; sourceTree = "<group>"; };
 		78691A6F2979AD62006B3F8A /* DynamicCoinSceneFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneFlow.swift; sourceTree = "<group>"; };
+		78691A732979DA2D006B3F8A /* TabBarFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78691A5229789D10006B3F8A /* Starscream in Frameworks */,
+				78691A772979E6D1006B3F8A /* SwiftyBeaver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +227,7 @@
 		78691A5D2978B4CF006B3F8A /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				78691A722979DA06006B3F8A /* TabBar */,
 				78691A622979856D006B3F8A /* SocketScene */,
 				78691A5E2978B645006B3F8A /* Assemblies */,
 				78691A5F2978B655006B3F8A /* LaunchScreen */,
@@ -259,6 +264,14 @@
 			path = SocketScene;
 			sourceTree = "<group>";
 		};
+		78691A722979DA06006B3F8A /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				78691A732979DA2D006B3F8A /* TabBarFlow.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,6 +290,7 @@
 			name = CoinCap;
 			packageProductDependencies = (
 				78691A5129789D10006B3F8A /* Starscream */,
+				78691A762979E6D1006B3F8A /* SwiftyBeaver */,
 			);
 			productName = CoinCap;
 			productReference = 78691A1729787FA0006B3F8A /* CoinCap.app */;
@@ -352,6 +366,7 @@
 			mainGroup = 78691A0E29787FA0006B3F8A;
 			packageReferences = (
 				78691A5029789D10006B3F8A /* XCRemoteSwiftPackageReference "Starscream" */,
+				78691A752979E6D1006B3F8A /* XCRemoteSwiftPackageReference "SwiftyBeaver" */,
 			);
 			productRefGroup = 78691A1829787FA0006B3F8A /* Products */;
 			projectDirPath = "";
@@ -403,6 +418,7 @@
 				78691A6C29798AD7006B3F8A /* DynamicCoinSceneRouter.swift in Sources */,
 				78691A6E29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift in Sources */,
 				78691A1F29787FA0006B3F8A /* DynamicCoinSceneViewController.swift in Sources */,
+				78691A742979DA2D006B3F8A /* TabBarFlow.swift in Sources */,
 				78691A1B29787FA0006B3F8A /* AppDelegate.swift in Sources */,
 				78691A1D29787FA0006B3F8A /* SceneDelegate.swift in Sources */,
 			);
@@ -756,6 +772,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		78691A752979E6D1006B3F8A /* XCRemoteSwiftPackageReference "SwiftyBeaver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyBeaver/SwiftyBeaver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -763,6 +787,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78691A5029789D10006B3F8A /* XCRemoteSwiftPackageReference "Starscream" */;
 			productName = Starscream;
+		};
+		78691A762979E6D1006B3F8A /* SwiftyBeaver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78691A752979E6D1006B3F8A /* XCRemoteSwiftPackageReference "SwiftyBeaver" */;
+			productName = SwiftyBeaver;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

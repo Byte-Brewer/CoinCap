@@ -52,11 +52,11 @@ final class DynamicCoinSceneInteractor: DynamicCoinSceneInteractorInput {
             
             switch socketState {
             case let .info(text):
-                print(text)
                 do {
                     let state = try JSONDecoder().decode(DynamicCoinScene.Models.ReteModel.self, from: Data(text.utf8))
                     self.presenter?.update(state: state)
-                } catch {
+                } catch let error {
+                    logger.error("Could not parse JSON: \(text) with error: \(error)")
                     self.presenter?.didFailLoadData(with: error.localizedDescription)
                 }
                 
@@ -64,8 +64,7 @@ final class DynamicCoinSceneInteractor: DynamicCoinSceneInteractorInput {
                 self.presenter?.didFailLoadData(with: text ?? "")
                 
             case .isConnected(let isConnect):
-                print("isConnected: \(isConnect)")
-                
+                logger.info("isConnected: \(isConnect)")
             }
         }.store(in: &subscriptions)
     }

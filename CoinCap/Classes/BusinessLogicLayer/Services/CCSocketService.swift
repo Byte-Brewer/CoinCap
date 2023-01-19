@@ -8,6 +8,7 @@
 import Foundation
 import Starscream
 import Combine
+import OSLog
 
 protocol CCSocketService: AnyObject {
     func startUpdate()
@@ -32,22 +33,20 @@ final class CCSocketServiceImplementation: CCSocketService, WebSocketDelegate {
     }
     
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
-        print("websocketDidReceiveMessage: ", event)
         switch event {
         case .connected(let headers):
             state.send(.isConnected(true))
-            print("websocket is connected: \(headers)")
+            logger.info(" info websocket is connected: \(headers)")
         case .disconnected(let reason, let code):
             let text = "websocket is disconnected: \(reason) with code: \(code)"
             state.send(.isConnected(false))
             state.send(.error(text))
-            print(text)
+            logger.warning("\(text)")
         case .text(let string):
-            let text = "Received text: \(string)"
             state.send(.info(string))
-            print(text)
+            logger.info("Received text: \(string)")
         case .binary(let data):
-            print("Received data: \(data.count)")
+            logger.info("Received data: \(data.count)")
         case .ping(_):
             break
         case .pong(_):
@@ -59,6 +58,7 @@ final class CCSocketServiceImplementation: CCSocketService, WebSocketDelegate {
         case .cancelled:
             state.send(.isConnected(false))
         case .error(let error):
+            logger.error("Unexpected error: \(String(describing: error))")
             state.send(.isConnected(false))
             state.send(.error(error?.localizedDescription))
         }
