@@ -10,7 +10,8 @@ import Starscream
 import Combine
 
 protocol CCSocketService: AnyObject {
-    
+    func startUpdate()
+    func stopUpdate()
 }
 
 enum SocketState {
@@ -24,12 +25,10 @@ final class CCSocketServiceImplementation: CCSocketService, WebSocketDelegate {
     private let state: PassthroughSubject<SocketState,Never>
     private let socket: WebSocket
     
-    // URLRequest(url: URL(string: "wss://ws.coincap.io/trades/binance")!
     init(request: URLRequest, state: PassthroughSubject<SocketState,Never>) {
         self.state = state
         self.socket = WebSocket(request: request)
         socket.delegate = self
-        socket.connect()
     }
     
     func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
@@ -45,7 +44,7 @@ final class CCSocketServiceImplementation: CCSocketService, WebSocketDelegate {
             print(text)
         case .text(let string):
             let text = "Received text: \(string)"
-            state.send(.info(text))
+            state.send(.info(string))
             print(text)
         case .binary(let data):
             print("Received data: \(data.count)")
@@ -63,5 +62,14 @@ final class CCSocketServiceImplementation: CCSocketService, WebSocketDelegate {
             state.send(.isConnected(false))
             state.send(.error(error?.localizedDescription))
         }
+    }
+    
+    // MARK: - CCSocketService
+    func startUpdate() {
+        socket.connect()
+    }
+    
+    func stopUpdate() {
+        socket.disconnect()
     }
 }

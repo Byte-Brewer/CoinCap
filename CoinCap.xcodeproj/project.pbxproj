@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		78691A1B29787FA0006B3F8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A1A29787FA0006B3F8A /* AppDelegate.swift */; };
 		78691A1D29787FA0006B3F8A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A1C29787FA0006B3F8A /* SceneDelegate.swift */; };
-		78691A1F29787FA0006B3F8A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A1E29787FA0006B3F8A /* ViewController.swift */; };
-		78691A2229787FA0006B3F8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78691A2029787FA0006B3F8A /* Main.storyboard */; };
+		78691A1F29787FA0006B3F8A /* DynamicCoinSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A1E29787FA0006B3F8A /* DynamicCoinSceneViewController.swift */; };
+		78691A2229787FA0006B3F8A /* DynamicCoin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78691A2029787FA0006B3F8A /* DynamicCoin.storyboard */; };
 		78691A2429787FA1006B3F8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78691A2329787FA1006B3F8A /* Assets.xcassets */; };
 		78691A2729787FA1006B3F8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78691A2529787FA1006B3F8A /* LaunchScreen.storyboard */; };
 		78691A3229787FA1006B3F8A /* CoinCapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A3129787FA1006B3F8A /* CoinCapTests.swift */; };
@@ -18,6 +18,11 @@
 		78691A3E29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A3D29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift */; };
 		78691A5229789D10006B3F8A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 78691A5129789D10006B3F8A /* Starscream */; };
 		78691A612978DC2A006B3F8A /* CCSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A602978DC2A006B3F8A /* CCSocketService.swift */; };
+		78691A672979863A006B3F8A /* DynamicCoinSceneModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A652979863A006B3F8A /* DynamicCoinSceneModels.swift */; };
+		78691A6A29798AC3006B3F8A /* DynamicCoinScenePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6929798AC3006B3F8A /* DynamicCoinScenePresenter.swift */; };
+		78691A6C29798AD7006B3F8A /* DynamicCoinSceneRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6B29798AD7006B3F8A /* DynamicCoinSceneRouter.swift */; };
+		78691A6E29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6D29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift */; };
+		78691A702979AD62006B3F8A /* DynamicCoinSceneFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A6F2979AD62006B3F8A /* DynamicCoinSceneFlow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +46,8 @@
 		78691A1729787FA0006B3F8A /* CoinCap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinCap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78691A1A29787FA0006B3F8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78691A1C29787FA0006B3F8A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78691A1E29787FA0006B3F8A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		78691A2129787FA0006B3F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78691A1E29787FA0006B3F8A /* DynamicCoinSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneViewController.swift; sourceTree = "<group>"; };
+		78691A2129787FA0006B3F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DynamicCoin.storyboard; sourceTree = "<group>"; };
 		78691A2329787FA1006B3F8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78691A2629787FA1006B3F8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78691A2829787FA1006B3F8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +57,11 @@
 		78691A3B29787FA1006B3F8A /* CoinCapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapUITests.swift; sourceTree = "<group>"; };
 		78691A3D29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78691A602978DC2A006B3F8A /* CCSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSocketService.swift; sourceTree = "<group>"; };
+		78691A652979863A006B3F8A /* DynamicCoinSceneModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneModels.swift; sourceTree = "<group>"; };
+		78691A6929798AC3006B3F8A /* DynamicCoinScenePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinScenePresenter.swift; sourceTree = "<group>"; };
+		78691A6B29798AD7006B3F8A /* DynamicCoinSceneRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneRouter.swift; sourceTree = "<group>"; };
+		78691A6D29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneInteractor.swift; sourceTree = "<group>"; };
+		78691A6F2979AD62006B3F8A /* DynamicCoinSceneFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCoinSceneFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,10 +223,9 @@
 		78691A5D2978B4CF006B3F8A /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				78691A622979856D006B3F8A /* SocketScene */,
 				78691A5E2978B645006B3F8A /* Assemblies */,
 				78691A5F2978B655006B3F8A /* LaunchScreen */,
-				78691A1E29787FA0006B3F8A /* ViewController.swift */,
-				78691A2029787FA0006B3F8A /* Main.storyboard */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -234,6 +243,20 @@
 				78691A2529787FA1006B3F8A /* LaunchScreen.storyboard */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		78691A622979856D006B3F8A /* SocketScene */ = {
+			isa = PBXGroup;
+			children = (
+				78691A1E29787FA0006B3F8A /* DynamicCoinSceneViewController.swift */,
+				78691A652979863A006B3F8A /* DynamicCoinSceneModels.swift */,
+				78691A6929798AC3006B3F8A /* DynamicCoinScenePresenter.swift */,
+				78691A6B29798AD7006B3F8A /* DynamicCoinSceneRouter.swift */,
+				78691A6F2979AD62006B3F8A /* DynamicCoinSceneFlow.swift */,
+				78691A6D29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift */,
+				78691A2029787FA0006B3F8A /* DynamicCoin.storyboard */,
+			);
+			path = SocketScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +371,7 @@
 			files = (
 				78691A2729787FA1006B3F8A /* LaunchScreen.storyboard in Resources */,
 				78691A2429787FA1006B3F8A /* Assets.xcassets in Resources */,
-				78691A2229787FA0006B3F8A /* Main.storyboard in Resources */,
+				78691A2229787FA0006B3F8A /* DynamicCoin.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,8 +396,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78691A672979863A006B3F8A /* DynamicCoinSceneModels.swift in Sources */,
+				78691A702979AD62006B3F8A /* DynamicCoinSceneFlow.swift in Sources */,
 				78691A612978DC2A006B3F8A /* CCSocketService.swift in Sources */,
-				78691A1F29787FA0006B3F8A /* ViewController.swift in Sources */,
+				78691A6A29798AC3006B3F8A /* DynamicCoinScenePresenter.swift in Sources */,
+				78691A6C29798AD7006B3F8A /* DynamicCoinSceneRouter.swift in Sources */,
+				78691A6E29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift in Sources */,
+				78691A1F29787FA0006B3F8A /* DynamicCoinSceneViewController.swift in Sources */,
 				78691A1B29787FA0006B3F8A /* AppDelegate.swift in Sources */,
 				78691A1D29787FA0006B3F8A /* SceneDelegate.swift in Sources */,
 			);
@@ -413,12 +441,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		78691A2029787FA0006B3F8A /* Main.storyboard */ = {
+		78691A2029787FA0006B3F8A /* DynamicCoin.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				78691A2129787FA0006B3F8A /* Base */,
 			);
-			name = Main.storyboard;
+			name = DynamicCoin.storyboard;
 			sourceTree = "<group>";
 		};
 		78691A2529787FA1006B3F8A /* LaunchScreen.storyboard */ = {
@@ -555,10 +583,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CSCETSS9EC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoinCap/Info.plist;
+				INFOPLIST_FILE = "CoinCap/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = DynamicCoin;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -583,10 +611,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CSCETSS9EC;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CoinCap/Info.plist;
+				INFOPLIST_FILE = "CoinCap/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = DynamicCoin;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
