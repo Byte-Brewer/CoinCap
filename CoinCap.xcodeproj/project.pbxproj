@@ -16,6 +16,8 @@
 		78691A3229787FA1006B3F8A /* CoinCapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A3129787FA1006B3F8A /* CoinCapTests.swift */; };
 		78691A3C29787FA1006B3F8A /* CoinCapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A3B29787FA1006B3F8A /* CoinCapUITests.swift */; };
 		78691A3E29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A3D29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift */; };
+		78691A5229789D10006B3F8A /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 78691A5129789D10006B3F8A /* Starscream */; };
+		78691A612978DC2A006B3F8A /* CCSocketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A602978DC2A006B3F8A /* CCSocketService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		78691A3729787FA1006B3F8A /* CoinCapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinCapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78691A3B29787FA1006B3F8A /* CoinCapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapUITests.swift; sourceTree = "<group>"; };
 		78691A3D29787FA1006B3F8A /* CoinCapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78691A602978DC2A006B3F8A /* CCSocketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCSocketService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78691A5229789D10006B3F8A /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +103,10 @@
 		78691A1929787FA0006B3F8A /* CoinCap */ = {
 			isa = PBXGroup;
 			children = (
-				78691A1A29787FA0006B3F8A /* AppDelegate.swift */,
-				78691A1C29787FA0006B3F8A /* SceneDelegate.swift */,
-				78691A1E29787FA0006B3F8A /* ViewController.swift */,
-				78691A2029787FA0006B3F8A /* Main.storyboard */,
-				78691A2329787FA1006B3F8A /* Assets.xcassets */,
-				78691A2529787FA1006B3F8A /* LaunchScreen.storyboard */,
-				78691A2829787FA1006B3F8A /* Info.plist */,
+				78691A532978A5DF006B3F8A /* Classes */,
+				78691A542978A5ED006B3F8A /* Resources */,
+				78691A562978A6AA006B3F8A /* Scripts */,
+				78691A552978A693006B3F8A /* Supporting Files */,
 			);
 			path = CoinCap;
 			sourceTree = "<group>";
@@ -127,6 +128,114 @@
 			path = CoinCapUITests;
 			sourceTree = "<group>";
 		};
+		78691A532978A5DF006B3F8A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				78691A572978B2E5006B3F8A /* ApplicationLayer */,
+				78691A582978B339006B3F8A /* BusinessLogicLayer */,
+				78691A5B2978B49F006B3F8A /* CoreLayer */,
+				78691A5D2978B4CF006B3F8A /* PresentationLayer */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		78691A542978A5ED006B3F8A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78691A2329787FA1006B3F8A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		78691A552978A693006B3F8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78691A2829787FA1006B3F8A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78691A562978A6AA006B3F8A /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		78691A572978B2E5006B3F8A /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				78691A1A29787FA0006B3F8A /* AppDelegate.swift */,
+				78691A1C29787FA0006B3F8A /* SceneDelegate.swift */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		78691A582978B339006B3F8A /* BusinessLogicLayer */ = {
+			isa = PBXGroup;
+			children = (
+				78691A5A2978B473006B3F8A /* Assemblies */,
+				78691A592978B3FF006B3F8A /* Services */,
+			);
+			path = BusinessLogicLayer;
+			sourceTree = "<group>";
+		};
+		78691A592978B3FF006B3F8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78691A602978DC2A006B3F8A /* CCSocketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		78691A5A2978B473006B3F8A /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		78691A5B2978B49F006B3F8A /* CoreLayer */ = {
+			isa = PBXGroup;
+			children = (
+				78691A5C2978B4AF006B3F8A /* Assemblies */,
+			);
+			path = CoreLayer;
+			sourceTree = "<group>";
+		};
+		78691A5C2978B4AF006B3F8A /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		78691A5D2978B4CF006B3F8A /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				78691A5E2978B645006B3F8A /* Assemblies */,
+				78691A5F2978B655006B3F8A /* LaunchScreen */,
+				78691A1E29787FA0006B3F8A /* ViewController.swift */,
+				78691A2029787FA0006B3F8A /* Main.storyboard */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		78691A5E2978B645006B3F8A /* Assemblies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assemblies;
+			sourceTree = "<group>";
+		};
+		78691A5F2978B655006B3F8A /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				78691A2529787FA1006B3F8A /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +252,9 @@
 			dependencies = (
 			);
 			name = CoinCap;
+			packageProductDependencies = (
+				78691A5129789D10006B3F8A /* Starscream */,
+			);
 			productName = CoinCap;
 			productReference = 78691A1729787FA0006B3F8A /* CoinCap.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +327,9 @@
 				Base,
 			);
 			mainGroup = 78691A0E29787FA0006B3F8A;
+			packageReferences = (
+				78691A5029789D10006B3F8A /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 78691A1829787FA0006B3F8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78691A612978DC2A006B3F8A /* CCSocketService.swift in Sources */,
 				78691A1F29787FA0006B3F8A /* ViewController.swift in Sources */,
 				78691A1B29787FA0006B3F8A /* AppDelegate.swift in Sources */,
 				78691A1D29787FA0006B3F8A /* SceneDelegate.swift in Sources */,
@@ -602,6 +718,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		78691A5029789D10006B3F8A /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		78691A5129789D10006B3F8A /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78691A5029789D10006B3F8A /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78691A0F29787FA0006B3F8A /* Project object */;
 }
