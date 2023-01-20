@@ -247,6 +247,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="wUK-Gv-9Q6">
+                                <rect key="frame" x="16" y="693" width="361" height="32"/>
+                                <segments>
+                                    <segment title="Buy"/>
+                                    <segment title="Sell"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="WXf-6o-kvX"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -257,6 +267,9 @@
                             <constraint firstItem="APs-LE-kJj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fqe-RB-pif"/>
                             <constraint firstItem="dBS-lB-q7R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Nlb-9V-xMZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="APs-LE-kJj" secondAttribute="trailing" constant="16" id="TWs-u2-IEW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wUK-Gv-9Q6" secondAttribute="trailing" constant="16" id="bIv-fX-khj"/>
+                            <constraint firstItem="dBS-lB-q7R" firstAttribute="top" secondItem="wUK-Gv-9Q6" secondAttribute="bottom" constant="16" id="fQq-Pm-PxB"/>
+                            <constraint firstItem="wUK-Gv-9Q6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="yxG-1g-inz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -272,7 +285,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="135.1145038167939" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>

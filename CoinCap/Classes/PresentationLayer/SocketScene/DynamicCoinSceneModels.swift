@@ -17,7 +17,12 @@ extension DynamicCoinScene {
 extension DynamicCoinScene.Models {
     
     struct ReteModel: Codable {
-        let exchange, base, quote, direction: String
+        enum Direction: String, Codable {
+            case buy, sell
+        }
+        
+        let exchange, base, quote: String
+        let direction: Direction
         let price, volume: Double
         let timestamp: Int
         let priceUsd: Double

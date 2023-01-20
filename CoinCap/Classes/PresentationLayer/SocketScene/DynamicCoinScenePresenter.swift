@@ -8,8 +8,10 @@
 import Foundation
 
 final class DynamicCoinScenePresenter: DynamicCoinSceneViewOutput, DynamicCoinSceneInteractorOutput {
+   
     
     // MARK: - Propetries
+    private var filterValue: DynamicCoinScene.Models.ReteModel.Direction = .buy
     private var interactor: DynamicCoinSceneInteractorInput!
     private var router: DynamicCoinSceneRouter!
     private weak var view: DynamicCoinSceneViewInput?
@@ -28,15 +30,29 @@ final class DynamicCoinScenePresenter: DynamicCoinSceneViewOutput, DynamicCoinSc
     }
     
     func update(state: DynamicCoinScene.Models.ReteModel) {
-        view?.update(state: state)
+        if state.direction == filterValue {
+            view?.update(state: state)
+        }
     }
     
     // MARK: - DynamicCoinSceneViewOutput
-    func startUpdate() {
+    func didTapStart() {
         interactor.startUpdate()
     }
     
-    func stopUpdate() {
+    func didTapStop() {
         interactor.stopUpdate()
+    }
+    
+    func viewDidAppear() {
+        interactor.startUpdate()
+    }
+    
+    func viewWillDisappeare() {
+        interactor.stopUpdate()
+    }
+    
+    func didTapSwitch(on index: Int) {
+        filterValue = index == 0 ? .buy : .sell
     }
 }

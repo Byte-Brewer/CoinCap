@@ -13,8 +13,11 @@ protocol DynamicCoinSceneViewInput: AnyObject {
 }
 
 protocol DynamicCoinSceneViewOutput: AnyObject {
-    func startUpdate()
-    func stopUpdate()
+    func didTapStart()
+    func didTapStop()
+    func viewDidAppear()
+    func viewWillDisappeare()
+    func didTapSwitch(on index: Int)
 }
 
 final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneViewInput {
@@ -32,12 +35,12 @@ final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.startUpdate()
+        presenter.viewDidAppear()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter.stopUpdate()
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter.viewWillDisappeare()
     }
     
     func configure(with presenter: DynamicCoinSceneViewOutput) {
@@ -55,7 +58,7 @@ final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneVi
         labels[0].text = state.exchange
         labels[1].text = state.base
         labels[2].text = state.quote
-        labels[3].text = state.direction
+        labels[3].text = state.direction.rawValue
         labels[4].text = String(state.price)
         labels[5].text = String(state.volume)
         labels[6].text = String(state.timestamp)
@@ -64,10 +67,14 @@ final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneVi
     
     // MARK: - Actions
     @IBAction private func start() {
-        presenter.startUpdate()
+        presenter.didTapStart()
     }
     
     @IBAction private func stop() {
-        presenter.stopUpdate()
+        presenter.didTapStop()
+    }
+    
+    @IBAction private func switchAction(_ sender: UISegmentedControl) {
+        presenter.didTapSwitch(on: sender.selectedSegmentIndex)
     }
 }
