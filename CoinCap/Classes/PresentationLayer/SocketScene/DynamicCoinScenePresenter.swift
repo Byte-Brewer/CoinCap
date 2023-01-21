@@ -9,7 +9,6 @@ import Foundation
 
 final class DynamicCoinScenePresenter: DynamicCoinSceneViewOutput, DynamicCoinSceneInteractorOutput {
    
-    
     // MARK: - Propetries
     private var filterValue: DynamicCoinScene.Models.ReteModel.Direction = .buy
     private var interactor: DynamicCoinSceneInteractorInput!

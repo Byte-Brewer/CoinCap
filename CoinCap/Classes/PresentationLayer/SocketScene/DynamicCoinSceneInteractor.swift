@@ -21,12 +21,12 @@ protocol DynamicCoinSceneInteractorInput: AnyObject {
 final class DynamicCoinSceneInteractor: DynamicCoinSceneInteractorInput {
     
     private let socketService: CCSocketService
-    private let state: PassthroughSubject<SocketState,Never>
+    private let state: PassthroughSubject<SocketState<DynamicCoinScene.Models.ReteModel>,Never>
     private var subscriptions: Set<AnyCancellable> = .init()
     private weak var presenter: DynamicCoinSceneInteractorOutput?
     
     init(socketService: CCSocketService,
-         state: PassthroughSubject<SocketState, Never>) {
+         state: PassthroughSubject<SocketState<DynamicCoinScene.Models.ReteModel>, Never>) {
         self.socketService = socketService
         self.state = state
         bind()
@@ -51,17 +51,11 @@ final class DynamicCoinSceneInteractor: DynamicCoinSceneInteractorInput {
             guard let self else { return }
             
             switch socketState {
-            case let .info(text):
-                do {
-                    let state = try JSONDecoder().decode(DynamicCoinScene.Models.ReteModel.self, from: Data(text.utf8))
-                    self.presenter?.update(state: state)
-                } catch let error {
-                    logger.error("Could not parse JSON: \(text) with error: \(error)")
-                    self.presenter?.didFailLoadData(with: error.localizedDescription)
-                }
+            case let .info(model):
+                self.presenter?.update(state: model)
                 
-            case let .error(text):
-                self.presenter?.didFailLoadData(with: text ?? "")
+            case .error(let error):
+                self.presenter?.didFailLoadData(with: error.localizedDescription)
                 
             case .isConnected(let isConnect):
                 logger.info("isConnected: \(isConnect)")

@@ -24,7 +24,7 @@ final class DynamicCoinSceneFlow: DynamicCoinSceneRouter {
         else { fatalError("can't find 'DynamicCoin' Storyboard or create DynamicCoinSceneViewController") }
     
         let request: URLRequest = .init(url: URL(string: "wss://ws.coincap.io/trades/binance")!)
-        let state: PassthroughSubject<SocketState, Never> = .init()
+        let state: PassthroughSubject<SocketState<DynamicCoinScene.Models.ReteModel>, Never> = .init()
         let socketService: CCSocketServiceImplementation = .init(request: request, state: state)
         let interactor: DynamicCoinSceneInteractor = .init(socketService: socketService, state: state)
         let presenter: DynamicCoinScenePresenter = .init(interactor: interactor, router: self, view: viewController)
