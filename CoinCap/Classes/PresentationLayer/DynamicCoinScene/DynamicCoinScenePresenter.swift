@@ -15,9 +15,9 @@ final class DynamicCoinScenePresenter: DynamicCoinSceneViewOutput, DynamicCoinSc
     private var router: DynamicCoinSceneRouter!
     private weak var view: DynamicCoinSceneViewInput?
     
-    init(interactor: DynamicCoinSceneInteractorInput!,
-         router: DynamicCoinSceneRouter!,
-         view: DynamicCoinSceneViewInput?) {
+    init(interactor: DynamicCoinSceneInteractorInput,
+         router: DynamicCoinSceneRouter,
+         view: DynamicCoinSceneViewInput) {
         self.interactor = interactor
         self.router = router
         self.view = view

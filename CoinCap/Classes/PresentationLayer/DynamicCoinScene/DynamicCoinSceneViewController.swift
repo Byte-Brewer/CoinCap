@@ -31,6 +31,7 @@ final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .yellow
+        self.title = "dynamic"
     }
     
     override func viewDidAppear(_ animated: Bool) {
