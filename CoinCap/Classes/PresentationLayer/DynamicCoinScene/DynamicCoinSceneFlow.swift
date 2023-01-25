@@ -21,7 +21,7 @@ final class DynamicCoinSceneFlow: DynamicCoinSceneRouter {
     // TODO: - add Dependencies injections
     func createFlow() -> UIViewController {
         guard let viewController = UIStoryboard(name: "DynamicCoin", bundle: nil).instantiateInitialViewController() as? DynamicCoinSceneViewController
-        else { fatalError("can't find 'DynamicCoin' Storyboard or create DynamicCoinSceneViewController") }
+        else { fatalError("Couldn't find 'DynamicCoin' Storyboard or create 'DynamicCoinSceneViewController'") }
     
         let request: URLRequest = .init(url: URL(string: "wss://ws.coincap.io/trades/binance")!)
         let state: PassthroughSubject<SocketState<DynamicCoinScene.Models.ReteModel>, Never> = .init()

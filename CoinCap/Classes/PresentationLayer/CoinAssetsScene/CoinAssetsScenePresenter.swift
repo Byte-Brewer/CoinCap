@@ -9,7 +9,7 @@ import Foundation
 
 final class CoinAssetsScenePresenter: CoinAssetsSceneViewOutput, CoinAssetsSceneInteractorOutput {
    
-    
+    // MARK: - Properties
     private var dataSourse: [CoinAssetsTVCell.State] = []
     private var rawdata: [CoinAssets] = []
     private var interactor: CoinAssetsSceneInteractorInput!
@@ -36,7 +36,7 @@ final class CoinAssetsScenePresenter: CoinAssetsSceneViewOutput, CoinAssetsScene
     // MARK: - CoinAssetsSceneInteractorOutput
     
     func didFailLoadData(with error: String) {
-        
+        view?.showError(message: error)
     }
     
     func update(data: [CoinAssets]) {

@@ -19,7 +19,7 @@ final class CoinAssetsSceneFlow: CoinAssetsSceneRouter {
     // TODO: - add Dependencies injections
     func createFlow() -> UIViewController {
         guard let viewController = UIStoryboard(name: "CoinAssets", bundle: nil).instantiateInitialViewController() as? CoinAssetsSceneViewController
-        else { fatalError("can't find 'CoinAssets' Storyboard or create CoinAssetsSceneViewController") }
+        else { fatalError("Couldn't find 'CoinAssets' Storyboard or create 'CoinAssetsSceneViewController'") }
         
         let networkClient: AppNetworkClient = .init()
         let assetsService: CCAssetsServiceImplementation = .init(networkClient: networkClient)

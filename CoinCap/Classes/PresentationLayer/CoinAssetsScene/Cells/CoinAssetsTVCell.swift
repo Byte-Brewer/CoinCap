@@ -54,12 +54,10 @@ private extension CoinAssetsTVCell {
         
         self.nameLabel.text = state.name
         self.symbolLabel.text = state.symbol
-        
         if let delta = Double(state.change) {
             self.changeLabel.text = String(format: "%.3f", delta) + "%"
             self.changeLabel.textColor = delta >= 0 ? .green : .red
         }
-        
         if let price = Double(state.price) {
             self.priceLabel.text = String(format: "%0.7f", price) + " $"
         }

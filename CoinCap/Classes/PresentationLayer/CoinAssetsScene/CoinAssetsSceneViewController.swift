@@ -9,6 +9,7 @@ import UIKit
 
 protocol CoinAssetsSceneViewInput: AnyObject {
     func updateUI()
+    func showError(message: String)
 }
 
 protocol CoinAssetsSceneViewOutput: AnyObject {
@@ -17,11 +18,10 @@ protocol CoinAssetsSceneViewOutput: AnyObject {
 }
 
 final class CoinAssetsSceneViewController: UIViewController, CoinAssetsSceneViewInput {
-    
+   
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var spinnerView: UIView!
     @IBOutlet private var spinner: UIActivityIndicatorView!
-    
     
     // MARK: - Propetry
     private var presenter: CoinAssetsSceneViewOutput!
@@ -46,6 +46,12 @@ final class CoinAssetsSceneViewController: UIViewController, CoinAssetsSceneView
         self.tableView.reloadData()
         spinnerView.isHidden = true
         spinner.stopAnimating()
+    }
+    
+    func showError(message: String) {
+        let vc = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        vc.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default))
+        self.present(vc, animated: true)
     }
     
     private func setupTableView() {

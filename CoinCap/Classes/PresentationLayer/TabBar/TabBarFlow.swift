@@ -31,16 +31,14 @@ final class MainTabBar: UITabBarController {
     }
     
     private func setupVCs() {
-        let dflow = DynamicCoinSceneFlow()
-        let dvc = UINavigationController(rootViewController: dflow.createFlow())
-        dvc.tabBarItem.title = "dynamic"
-        dvc.tabBarItem.image = .strokedCheckmark
-        let aflow = CoinAssetsSceneFlow()
-        let avc = UINavigationController(rootViewController: aflow.createFlow())
-        avc.tabBarItem.title = "assets"
-        avc.tabBarItem.image = .strokedCheckmark
-        viewControllers = [
-            avc, dvc
-        ]
+        let dynamicFlow = DynamicCoinSceneFlow()
+        let dynamicViewController = UINavigationController(rootViewController: dynamicFlow.createFlow())
+        dynamicViewController.tabBarItem.title = "dynamic"
+        dynamicViewController.tabBarItem.image = .strokedCheckmark
+        let coinFlow = CoinAssetsSceneFlow()
+        let coinViewController = UINavigationController(rootViewController: coinFlow.createFlow())
+        coinViewController.tabBarItem.title = "assets"
+        coinViewController.tabBarItem.image = .strokedCheckmark
+        viewControllers = [coinViewController, dynamicViewController]
     }
 }
