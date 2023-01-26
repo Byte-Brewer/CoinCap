@@ -7,8 +7,6 @@
 
 import Foundation
 import UIKit
-import Combine
-
 
 final class DynamicCoinSceneFlow: DynamicCoinSceneRouter {
     
@@ -18,18 +16,7 @@ final class DynamicCoinSceneFlow: DynamicCoinSceneRouter {
 
     }
     
-    // TODO: - add Dependencies injections
     func createFlow() -> UIViewController {
-        guard let viewController = UIStoryboard(name: "DynamicCoin", bundle: nil).instantiateInitialViewController() as? DynamicCoinSceneViewController
-        else { fatalError("Couldn't find 'DynamicCoin' Storyboard or create 'DynamicCoinSceneViewController'") }
-    
-        let request: URLRequest = .init(url: URL(string: "wss://ws.coincap.io/trades/binance")!)
-        let state: PassthroughSubject<SocketState<DynamicCoinScene.Models.ReteModel>, Never> = .init()
-        let socketService: CCSocketServiceImplementation = .init(request: request, state: state)
-        let interactor: DynamicCoinSceneInteractor = .init(socketService: socketService, state: state)
-        let presenter: DynamicCoinScenePresenter = .init(interactor: interactor, router: self, view: viewController)
-        interactor.configure(with: presenter)
-        viewController.configure(with: presenter)
-        return viewController
+        DynamicCoinSceneAssemblyImplementation().createModule(with: .init(router: self))
     }
 }

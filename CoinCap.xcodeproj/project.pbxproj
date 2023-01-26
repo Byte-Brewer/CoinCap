@@ -41,6 +41,7 @@
 		78691A9B29803267006B3F8A /* CoinAssetsSceneFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A9A29803267006B3F8A /* CoinAssetsSceneFlow.swift */; };
 		78691A9F298049BE006B3F8A /* CoinAssetsTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691A9D298049BE006B3F8A /* CoinAssetsTVCell.swift */; };
 		78691AA0298049BE006B3F8A /* CoinAssetsTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78691A9E298049BE006B3F8A /* CoinAssetsTVCell.xib */; };
+		78691AA32982AAC0006B3F8A /* BaseViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78691AA22982AAC0006B3F8A /* BaseViewInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		78691A9A29803267006B3F8A /* CoinAssetsSceneFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAssetsSceneFlow.swift; sourceTree = "<group>"; };
 		78691A9D298049BE006B3F8A /* CoinAssetsTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAssetsTVCell.swift; sourceTree = "<group>"; };
 		78691A9E298049BE006B3F8A /* CoinAssetsTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoinAssetsTVCell.xib; sourceTree = "<group>"; };
+		78691AA22982AAC0006B3F8A /* BaseViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +263,7 @@
 		78691A5D2978B4CF006B3F8A /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				78691AA12982AA84006B3F8A /* Extensions */,
 				78691A89298023B2006B3F8A /* CoinAssetsScene */,
 				78691A722979DA06006B3F8A /* TabBar */,
 				78691A622979856D006B3F8A /* DynamicCoinScene */,
@@ -357,6 +360,14 @@
 				78691A9E298049BE006B3F8A /* CoinAssetsTVCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		78691AA12982AA84006B3F8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				78691AA22982AAC0006B3F8A /* BaseViewInput.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -514,6 +525,7 @@
 				78691A79297DDE6F006B3F8A /* DynamicCoinSceneAssembly.swift in Sources */,
 				78691A8F2980246A006B3F8A /* CoinAssetsScenePresenter.swift in Sources */,
 				78691A6C29798AD7006B3F8A /* DynamicCoinSceneRouter.swift in Sources */,
+				78691AA32982AAC0006B3F8A /* BaseViewInput.swift in Sources */,
 				78691A9129802479006B3F8A /* CoinAssetsSceneRouter.swift in Sources */,
 				78691A6E29798AEB006B3F8A /* DynamicCoinSceneInteractor.swift in Sources */,
 				78691A1F29787FA0006B3F8A /* DynamicCoinSceneViewController.swift in Sources */,

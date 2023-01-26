@@ -7,8 +7,7 @@
 
 import UIKit
 
-protocol DynamicCoinSceneViewInput: AnyObject {
-    func showError(message: String)
+protocol DynamicCoinSceneViewInput: BaseViewInput {
     func update(state: DynamicCoinScene.Models.ReteModel)
 }
 
@@ -49,12 +48,6 @@ final class DynamicCoinSceneViewController: UIViewController, DynamicCoinSceneVi
     }
     
     // MARK: - DynamicCoinSceneViewInput
-    func showError(message: String) {
-        let vc = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        vc.addAction(UIAlertAction(title: "ok", style: UIAlertAction.Style.default))
-        self.present(vc, animated: true)
-    }
-    
     func update(state: DynamicCoinScene.Models.ReteModel) {
         labels[0].text = state.exchange
         labels[1].text = state.base
