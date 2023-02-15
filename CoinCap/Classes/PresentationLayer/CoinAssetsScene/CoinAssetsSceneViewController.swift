@@ -64,7 +64,7 @@ extension CoinAssetsSceneViewController: UITableViewDelegate, UITableViewDataSou
                                                        for: indexPath) as? CoinAssetsTVCell
         else { fatalError("Could not cast cell to 'CoinAssetsTVCell'") }
         
-        cell.state = presenter.item(at: indexPath)
+        cell.configure(state: presenter.item(at: indexPath))
         return cell
     }
 }

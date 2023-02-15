@@ -7,8 +7,14 @@
 
 import UIKit
 
-final class CoinAssetsTVCell: UITableViewCell {
+protocol Configurable {
+    associatedtype T
+    func configure(state: T)
+}
 
+final class CoinAssetsTVCell: UITableViewCell, Configurable {
+    typealias T = State
+    
     // MARK: - IBOutlets
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var symbolLabel: UILabel!
@@ -27,31 +33,13 @@ final class CoinAssetsTVCell: UITableViewCell {
         let price: String
     }
     
-    // MARK: - Properties
-    var state: State? {
-        didSet {
-            configure()
-        }
-    }
-    
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
- 
-}
-
-// MARK: - Private methods
-private extension CoinAssetsTVCell {
     
-    func setupUI() {
-        
-    }
-    
-    func configure() {
-        guard let state else { return }
-        
+    func configure(state: State) {
         self.nameLabel.text = state.name
         self.symbolLabel.text = state.symbol
         if let delta = Double(state.change) {
@@ -61,5 +49,13 @@ private extension CoinAssetsTVCell {
         if let price = Double(state.price) {
             self.priceLabel.text = String(format: "%0.7f", price) + " $"
         }
+    }
+}
+
+// MARK: - Private methods
+private extension CoinAssetsTVCell {
+    
+    func setupUI() {
+        
     }
 }
