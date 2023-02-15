@@ -18,6 +18,7 @@ protocol CoinAssetsSceneViewOutput: AnyObject {
 
 final class CoinAssetsSceneViewController: UIViewController, CoinAssetsSceneViewInput {
    
+    // MARK: - IBOutlets
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var spinnerView: UIView!
     @IBOutlet private var spinner: UIActivityIndicatorView!
@@ -54,6 +55,7 @@ final class CoinAssetsSceneViewController: UIViewController, CoinAssetsSceneView
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension CoinAssetsSceneViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.numberOfRows()
